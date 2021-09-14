@@ -1,12 +1,4 @@
-<!-- Typing SVG -->
-<p align="center">
-    <a href="https://git.io/J0hKr">
-        <img
-            src="https://readme-typing-svg.herokuapp.com?size=30&width=800&lines=Ok+Bie;I'm+going
-            alt="Typing SVG"
-        />
-    </a>
-</p>
+## [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Lemon+milk&color=F70000&lines=Welcome+to+Meenutty+Whatsapp+Chat+Bot;Created+by+Vishnu+Ser;This+is+the+normal+whatsapp+Bot+with+media+clips;With+more+features)](https://git.io/typing-svg)
 
 
 ##
