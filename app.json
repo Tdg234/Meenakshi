@@ -56,8 +56,8 @@
             "required": false,
             "value": "Meenakshi"
         },
-        "FULL_EVA": {
-            "description": "Hesabınızı bir Chatbot'a Çevirin! Turn your account into a chatbot!",
+        "MEENU_AI": {
+            "description": "Ningalude bot ine oru AI chat bot aaki maatunnu! Turn your account into a chatbot!",
             "required": true,
             "value": "false"
         },
