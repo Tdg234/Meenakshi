@@ -136,20 +136,26 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please wait.')}`);
         });
 
         console.log(
-            chalk.green.bold('Meenakshi is Ferfect Ok! 💁🏻‍♀️')
+            chalk.green.bold('Entha mwonuse fear aayo ? Meenutty is connected to your Whatsapp!😉')
         );
     });
     
-    conn.on('chat-update', async m => {
-        if (!m.hasNewMessage) return;
-        if (!m.messages && !m.count) return;
-        let msg = m.messages.all()[0];
+    conn.on('message-new', async msg => {
         if (msg.key && msg.key.remoteJid == 'status@broadcast') return;
 
-        if (config.NO_ONLINE) {
+        if (config.BOT_PRESENCE == 'offline') {
             await conn.updatePresence(msg.key.remoteJid, Presence.unavailable);
-        }
-
+        
+        } else if (config.BOT_PRESENCE == 'online') {
+            await conn.updatePresence(msg.key.remoteJid, Presence.available);
+        
+        } else if (config.BOT_PRESENCE == 'typing') {
+            await conn.updatePresence(msg.key.remoteJid, Presence.composing);
+        
+        } else if (config.BOT_PRESENCE == 'recording') {
+            await conn.updatePresence(msg.key.remoteJid, Presence.recording);
+        } 
+        
         if (msg.messageStubType === 32 || msg.messageStubType === 28) {
             // Görüşürüz Mesajı
             var gb = await getMessage(msg.key.remoteJid, 'goodbye');
@@ -206,15 +212,7 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please wait.')}`);
                         if (!command.onlyPm === chat.jid.includes('-')) sendMsg = true;
                         else if (command.onlyGroup === chat.jid.includes('-')) sendMsg = true;
                     }
-                    
-                    else if ((config.YAK !== false && msg.key.fromMe === false && command.fromMe === true &&
-                        (msg.participant && config.YAK.includes(',') ? config.YAK.split(',').includes(msg.participant.split('@')[0]) : msg.participant.split('@')[0] == config.YAK || config.YAK.includes(',') ? config.YAK.split(',').includes(msg.key.remoteJid.split('@')[0]) : msg.key.remoteJid.split('@')[0] == config.YAK)
-                    ) || command.fromMe === msg.key.fromMe || (command.fromMe === false && !msg.key.fromMe)) {
-                        if (command.onlyPinned && chat.pin === undefined) return;
-                        if (!command.onlyPm === chat.jid.includes('-')) sendMsg = true;
-                        else if (command.onlyGroup === chat.jid.includes('-')) sendMsg = true;
-                    }
-  
+                                
                     if (sendMsg) {
                         if (config.SEND_READ && command.on === undefined) {
                             await conn.chatRead(msg.key.remoteJid);
@@ -248,8 +246,8 @@ ${chalk.blue.italic('ℹ️ Connecting to WhatsApp... Please wait.')}`);
                                     'Gerçekleşen Hata: ' + error + '\n\n'
                                     , MessageType.text);
                             } else {
-                                await conn.sendMessage(conn.user.jid, '*~♥️🕊️______~ 𝔐𝔢𝔢𝔫𝔞𝔨𝔰𝔥𝔦 ~_____🕊️♥️~*' +
-                                    '\n\n*🧞‍♂️ ' + error + '*\n'
+                                await conn.sendMessage(conn.user.jid, '*~♥️🕊️______ M͟e͟e͟n͟a͟k͟s͟h͟i͟/V͟i͟s͟h͟n͟u͟s͟e͟r _____🕊️♥️~*' +
+                                    '\n\n*🧞‍♂️ ' + error + '*\n\n Enikk enthoru oru preshnam und 🥵. Ente creatorine onnu contact cheyyumo allenkil njan chelapol dead aakum wa.me/916235989299 vegam ariyikk..😷'
                                     , MessageType.text);
                             }
                         }
