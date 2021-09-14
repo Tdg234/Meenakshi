@@ -38,7 +38,7 @@ module.exports = {
     SONGU: process.env.SONGU === undefined ? 'Uploading your song🙃...' : process.env.SONGU,
     DISSTICKER: process.env.DISABLE_STICKER === undefined ? false : process.env.DISABLE_STICKER,
     NOLOG: process.env.NO_LOG === undefined ? 'false' : process.env.NO_LOG,
-    FULLEVA: process.env.FULL_EVA === undefined ? 'false' : process.env.FULL_EVA,
+    MEENU_AI: process.env.MEENU_AI === undefined ? 'false' : process.env.MEENU_AI,
     BOTPLK: process.env.BOT_NAME === undefined ? 'MEENAKSHI' : process.env.BOT_NAME,
     BLOCKMSG: process.env.BLOCK_MESSAGE === undefined ? 'default' : process.env.BLOCK_MESSAGE,
     UNBLOCKMSG: process.env.UNBLOCK_MESSAGE === undefined ? 'default' : process.env.UNBLOCK_MESSAGE,
