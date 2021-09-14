@@ -31,6 +31,11 @@
             "required": false,
             "value": "true"
         },
+        "BOT_PRESENCE": {
+            "description": "Type the Presence of bot, presences: online => Always Shows the online, offline => Always Shows offline, typing => Always Shows typing, recording => Always Shows recording.. NOTE : THE PRESENCE WILL BE PERMANENT, UNTIL THE BOT IS ALIVE / RUNNING / WORKING",
+            "required": false,
+            "value": "recording"
+        },
         "ANTİ_LİNK": {
             "description": "അനാവശ്യ ലിങ്കുകളെ ബ്ലോക്ക്‌ ചെയ്യുന്നു. Link Blocking System.",
             "required": true,
@@ -177,11 +182,6 @@
             "description": "Customizable song UPLOADING message instead of 'Uploading your song'",
             "required": true,
             "value": "*Feel the song*"
-        },
-        "NO_ONLINE": {
-            "description": "BOT ONLINE ഇൽ ഇല്ല എന്ന് കാണിക്കുക. Type true if you don't want to appear online.",
-            "required": false,
-            "value": "true"
         },
         "COFFEEHOUSE_API_KEY": {
             "description": "Pass This Step! - Bu Bölümü Geçin!",
