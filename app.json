@@ -51,6 +51,11 @@
             "required": true,
             "value": "^[.!;]"
         },
+         "TALKING_PINKY": {
+            "description": "Hesabınızı bir Chatbot'a Çevirin! Turn your account into a chatbot!",
+            "required": true,
+            "value": "false"
+        },
         "OWNER_NAME": {
             "description": "reply for .owner ! give your details, Use => default, to change back.",
             "required": false,
