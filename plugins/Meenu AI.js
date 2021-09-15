@@ -1,9 +1,8 @@
 /* Codded by Phaticusthiccy
 eva artificial intelligence was codded by Phaticusthiccy
-also 80% of thise code is done by Phaticusthiccy
+also 90% of thise code is done by Phaticusthiccy
 
-re-coded or modified by vishnu-memanakizhakathil
-Tnx to afnan plk
+re-coded or modified by afnanplk
 to bring new ai
 */
 
@@ -239,28 +238,28 @@ var succ_on = ''
 var succ_off = ''
 if (conf.LANG == 'TR') {
     fulleva_dsc = 'Tam fonksiyonel pinky özelliklerini aktif eder. Hesabınızı bir chatbota dönüştürün!'
-    already_on = 'pikachu yapay zekası halihazırda tüm fonksiyonları etkin.'
-    already_off = 'pikachu yapay zekası halihazırda yarı fonksiyonel çalışıyor.'
-    succ_on = 'pikachu, Tam Fonksiyonel Olarak Açıldı! Lütfen Biraz Bekleyin! ✅'
-    succ_off = 'pikachu, Yarı Fonksiyonel Olarak Ayarlandı! Lütfen Biraz Bekleyin! ☑️'
+    already_on = 'pinky yapay zekası halihazırda tüm fonksiyonları etkin.'
+    already_off = 'pinky yapay zekası halihazırda yarı fonksiyonel çalışıyor.'
+    succ_on = 'pinky, Tam Fonksiyonel Olarak Açıldı! Lütfen Biraz Bekleyin! ✅'
+    succ_off = 'pinky, Yarı Fonksiyonel Olarak Ayarlandı! Lütfen Biraz Bekleyin! ☑️'
 }
 if (conf.LANG == 'EN') {
-    fulleva_dsc = 'Activates full functional Meenu features. Turn your account into a ai chatbot!'
-    already_on = 'Meenu artificial intelligence is already fully functional.'
-    already_off = 'Meenu artificial intelligence is currently running semi-functional.'
-    succ_on = 'Meenu Opened Fully Functionally! Please wait a bit! ✅'
-    succ_off = 'Meenu Set to Semi-Functional! Please wait a bit! ☑️'
+    fulleva_dsc = 'Activates full functional Pinky features. Turn your account into a ai chatbot!'
+    already_on = 'Pinky artificial intelligence is already fully functional.'
+    already_off = 'Pinky artificial intelligence is currently running semi-functional.'
+    succ_on = 'Pinky Opened Fully Functionally! Please wait a bit! ✅'
+    succ_off = 'Pinky Set to Semi-Functional! Please wait a bit! ☑️'
 }
 if (conf.LANG == 'ML') {
     fulleva_dsc = 'പൂർണ്ണമായും പ്രവർത്തനക്ഷമമായ pinky സവിശേഷതകൾ സജീവമാക്കുന്നു. നിങ്ങളുടെ അക്കൗണ്ട് ഒരു ചാറ്റ്ബോട്ടാക്കി മാറ്റുക!'
-    already_on = 'Meenu കൃത്രിമബുദ്ധി ഇതിനകം പൂർണ്ണമായി പ്രവർത്തിക്കുന്നു.'
-    already_off = 'Meenu AI നിലവിൽ സെമി-ഫംഗ്ഷണൽ ആണ്.'
-    succ_on = 'Meenu പൂർണ്ണമായും പ്രവർത്തനക്ഷമമായി തുറന്നു! കുറച്ച് കാത്തിരിക്കൂ! ✅'
-    succ_off = 'സെമി-ഫങ്ഷണൽ ആയി Meenu സജ്ജമാക്കുക! കുറച്ച് കാത്തിരിക്കൂ! ☑️'
+    already_on = 'pinky കൃത്രിമബുദ്ധി ഇതിനകം പൂർണ്ണമായി പ്രവർത്തിക്കുന്നു.'
+    already_off = 'pinky AI നിലവിൽ സെമി-ഫംഗ്ഷണൽ ആണ്.'
+    succ_on = 'pinky പൂർണ്ണമായും പ്രവർത്തനക്ഷമമായി തുറന്നു! കുറച്ച് കാത്തിരിക്കൂ! ✅'
+    succ_off = 'സെമി-ഫങ്ഷണൽ ആയി pinky സജ്ജമാക്കുക! കുറച്ച് കാത്തിരിക്കൂ! ☑️'
 }
 
-Asena.addCommand({ pattern: 'eva ?(.*)', desc: fulleva_dsc, fromMe: true,dontAddCommandList: true, usage: '.eva on / off' }, (async (message, match) => {
-    var pinky_status = `${conf.MEENU_AI}`
+Asena.addCommand({ pattern: 'pinky ?(.*)', desc: fulleva_dsc, fromMe: true,dontAddCommandList: true, usage: '.eva on / off' }, (async (message, match) => {
+    var pinky_status = `${conf.TALKING_PINKY}`
     if (match[1] == 'on') {
         if (pinky_status == 'true') {
             return await message.client.sendMessage(message.jid, '*' + already_on + '*', MessageType.text)
@@ -268,7 +267,7 @@ Asena.addCommand({ pattern: 'eva ?(.*)', desc: fulleva_dsc, fromMe: true,dontAdd
         else {
             await heroku.patch(baseURI + '/config-vars', { 
                 body: { 
-                    ['MEENU_AI']: 'true'
+                    ['TALKING_PINKY']: 'true'
                 } 
             });
             await message.client.sendMessage(message.jid, '*' + succ_on + '*', MessageType.text)
@@ -281,7 +280,7 @@ Asena.addCommand({ pattern: 'eva ?(.*)', desc: fulleva_dsc, fromMe: true,dontAdd
         else {
             await heroku.patch(baseURI + '/config-vars', { 
                 body: { 
-                    ['MEENU_AI']: 'false'
+                    ['TALKING_PINKY']: 'false'
                 } 
             });
             await message.client.sendMessage(message.jid, '*' + succ_off + '*', MessageType.text)
