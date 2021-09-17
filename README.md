@@ -1,4 +1,3 @@
-## [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Lemon+milk&color=F70000&lines=Uyyo+Ithaara+vannekane;Created+by+Vishnu+Ser;This+is+a+normal+whatsapp+Bot+with+media+clips;With+more+features)](https://git.io/typing-svg)
 
 
 ##
